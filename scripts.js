@@ -1,62 +1,88 @@
-// Recent highlights
-const highlights = [
-    "Paper Accepted at IEEE CAI conference 2024"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-const highlightsList = document.getElementById("highlights-list");
+    /* ===============================
+       Recent Highlights
+    =============================== */
 
-highlights.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    highlightsList.appendChild(li);
-});
+    const highlights = [
+        "Paper Accepted at IEEE CAI Conference 2024"
+    ];
 
-// Research topics
-const researchTopics = [
-    "CESMA: Cost Efficient Schema Aware Multi Agent NL2SQL Framework",
-    "RIPLLES: An Automatic Embedding Generation Algorithm for Forward Forward Algorithm with CNNs",
-    "SLED: Systemic Lupus Erythematosus Detection using Transformer Based Models"
-];
-
-document.getElementById("loadResearchBtn")
-    .addEventListener("click", () => {
-        const list = document.getElementById("research-list");
-        list.innerHTML = "";
-        researchTopics.forEach(topic => {
+    const highlightsList = document.getElementById("highlights-list");
+    if (highlightsList) {
+        highlights.forEach(item => {
             const li = document.createElement("li");
-            li.textContent = topic;
-            list.appendChild(li);
+            li.textContent = item;
+            highlightsList.appendChild(li);
         });
-    });
+    }
 
+    /* ===============================
+       Research Topics Button
+    =============================== */
 
-/* ===============================
-Activity Image Slideshow
-=============================== */
+    const researchTopics = [
+        "CESMA: Cost Efficient Schema Aware Multi Agent NL2SQL Framework",
+        "RIPPLES: Automatic Embedding Generation for Forward-Forward CNNs",
+        "SLED: Systemic Lupus Erythematosus Detection using Transformer Models"
+    ];
 
-const activityImages = [
-    "assets/collage/collage1.jpg",
-    "assets/collage/collage2.jpg",
-    "assets/collage/collage3.jpg",
-    "assets/collage/collage4.jpg",
-    "assets/collage/collage5.jpg"
-];
+    const loadResearchBtn = document.getElementById("loadResearchBtn");
+    const researchList = document.getElementById("research-list");
 
-let currentActivityIndex = 0;
-const activityImgElement = document.getElementById("activity-image");
+    if (loadResearchBtn && researchList) {
+        loadResearchBtn.addEventListener("click", () => {
+            researchList.innerHTML = "";
+            researchTopics.forEach(topic => {
+                const li = document.createElement("li");
+                li.textContent = topic;
+                researchList.appendChild(li);
+            });
+        });
+    }
 
-setInterval(() => {
-    // Fade out
-    activityImgElement.classList.add("fade-out");
+    /* ===============================
+       Activity Image Slideshow
+    =============================== */
 
-    setTimeout(() => {
-        // Change image
-        currentActivityIndex =
-            (currentActivityIndex + 1) % activityImages.length;
-        activityImgElement.src = activityImages[currentActivityIndex];
+    const activityImages = [
+        "assets/collage/collage1.jpg",
+        "assets/collage/collage2.jpg",
+        "assets/collage/collage3.jpg",
+        "assets/collage/collage4.jpg",
+        "assets/collage/collage5.jpg"
+    ];
 
-        // Fade in
-        activityImgElement.classList.remove("fade-out");
-    }, 1000); // match CSS transition time
+    const activityImgElement = document.getElementById("activity-image");
+    if (!activityImgElement || activityImages.length === 0) return;
 
-}, 10); // total time per image
+    let currentActivityIndex = 0;
+    const displayTime = 3000; // image stays visible
+    const fadeTime = 1000;    // fade duration
+
+    function runSlideshow() {
+        setTimeout(() => {
+            // Fade out
+            activityImgElement.classList.add("fade-out");
+
+            setTimeout(() => {
+                // Change image
+                currentActivityIndex =
+                    (currentActivityIndex + 1) % activityImages.length;
+
+                activityImgElement.src = activityImages[currentActivityIndex];
+
+                // Fade in
+                activityImgElement.classList.remove("fade-out");
+
+                // Next cycle
+                runSlideshow();
+            }, fadeTime);
+
+        }, displayTime);
+    }
+
+    // Start slideshow
+    runSlideshow();
+
+});
