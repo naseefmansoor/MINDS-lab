@@ -125,9 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const activityImages = [
         "assets/collage/collage1.jpg",
-        "assets/collage/collage2.jpg",
-        "assets/collage/collage3.jpg",
-        "assets/collage/collage4.jpg"
+        "assets/collage/collage2.jpg"
+        // "assets/collage/collage3.jpg",
+        // "assets/collage/collage4.jpg"
         // "assets/collage/collage5.jpg"
     ];
 
