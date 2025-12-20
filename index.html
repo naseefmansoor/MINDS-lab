@@ -46,7 +46,6 @@
     </div>
 </section>
 
-
 <!-- ================= ABOUT ================= -->
 <section id="about" class="section">
     <div class="container">
@@ -59,20 +58,30 @@
 </section>
 
 <!-- ================= HIGHLIGHTS ================= -->
-<section id="highlights" class="section section-alt">
+<section id="highlights" class="section">
     <div class="container">
         <h2>Recent Highlights</h2>
-        <ul id="highlights-list"></ul>
+
+        <div class="highlights-wrapper">
+            <ul id="highlights-list" class="highlights-scroll">
+                <!-- Injected by JS -->
+            </ul>
+        </div>
     </div>
 </section>
+
 
 <!-- ================= RESEARCH ================= -->
 <section id="research" class="section">
     <div class="container">
-        <h2>Selected Research</h2>
+        <h2>Selected Projects</h2>
         <p>Representative projects and publications from our lab.</p>
-        <button id="loadResearchBtn">Load Research Topics</button>
-        <ul id="research-list"></ul>
+
+        <button id="loadResearchBtn">Load Recent Projects</button>
+
+        <div id="projects-container" class="projects-grid">
+            <!-- Projects injected by JS -->
+        </div>
     </div>
 </section>
 
@@ -114,6 +123,25 @@
                 <h3>Zaina Nadeem</h3>
                 <p>Undergraduate Research Assistant</p>
             </div>
+
+            <div class="person-card">
+                <img 
+                    src="assets/people/victor.jpg" 
+                    alt="Victor Emma Wele"
+                    onerror="this.onerror=null; this.src='assets/people/default.jpg';">
+                <h3>Victor Emma Wele</h3>
+                <p>Graduate Research Assistant</p>
+            </div>
+
+            <div class="person-card">
+                <img 
+                    src="assets/people/pram.jpg" 
+                    alt="Pramudya Wicaksono"
+                    onerror="this.onerror=null; this.src='assets/people/default.jpg';">
+                <h3>Pramudya Wicaksono</h3>
+                <p>Graduate Research Assistant</p>
+            </div>
+
         </div>
 
 
@@ -125,6 +153,15 @@
                     alt="Spencer Connolly"
                     onerror="this.onerror=null; this.src='assets/people/default.jpg';">
                 <h3>Spencer Connolly</h3>
+                <p>Graduate Research Assistant</p>
+            </div>
+
+            <div class="person-card">
+                <img 
+                    src="assets/people/pascaline.jpg" 
+                    alt="pascaline jerotich"
+                    onerror="this.onerror=null; this.src='assets/people/default.jpg';">
+                <h3>Pascaline Jerotich</h3>
                 <p>Graduate Research Assistant</p>
             </div>
 
