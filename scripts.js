@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "[Jan 26] Our paper titled \"An Framework for Agentic NL2SQL Generation\" got accepted in IEEE CAI 2026",
         "[Jan 26] Our paper titled \"Satellite to Silos: Predicting County-level Corn Production in Minnesota Using Data Fusion\" got accepted in IEEE CAI 2026",
         "[Dec 25] Pascaline defended her master's APP",
-        "[Nov 25] Welcomes Dr. Mousumi Haque to join as an visiting researcher",
+        // "[Nov 25] Welcomes Dr. Mousumi Haque to join as an visiting researcher",
         "[Nov 25] Welcomes undergraduate student Zaina Nadeem to join as an undergraduate research assistant",
         "[Nov 25] Spencer defended his master's thesis",
         "[Nov 25] David defended his master's APP",
