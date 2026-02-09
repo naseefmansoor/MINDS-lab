@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "assets/projects/cesma.jpg",
             description:
                 "A cost-efficient schema-aware multi-agent NL2SQL framework that improves accuracy and scalability for enterprise databases.",
-            github: "https://github.com/your-org/cesma"
+            github: "https://github.com/mindslab25/CESMA"
         },
         {
             title: "RIPPLES",
             image: "assets/projects/ripples.jpg",
             description:
                 "An automatic embedding generation approach for Forward-Forward algorithms with convolutional neural networks.",
-            github: "https://github.com/your-org/ripples"
+            github: "https://github.com/mindslab25/RIPPLES"
         },
         {
             title: "SLED",
