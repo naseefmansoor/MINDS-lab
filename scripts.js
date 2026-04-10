@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     =============================== */
 
     const highlights = [
+        "[April 26] Congratulations to Pramudya Wicaksono for successfully defending his masters thesis." ,
         "[Jan 26] Our paper titled \"An Framework for Agentic NL2SQL Generation\" got accepted in IEEE CAI 2026",
         "[Jan 26] Our paper titled \"Satellite to Silos: Predicting County-level Corn Production in Minnesota Using Data Fusion\" got accepted in IEEE CAI 2026",
         "[Dec 25] Pascaline defended her master's APP",
