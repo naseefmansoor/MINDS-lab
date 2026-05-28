@@ -62,42 +62,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loadResearchBtn = document.getElementById("loadResearchBtn");
     const projectsContainer = document.getElementById("projects-container");
+    const projectsWrapper = document.getElementById("projects-wrapper");
 
-    if (loadResearchBtn && projectsContainer) {
+    if (loadResearchBtn && projectsContainer && projectsWrapper) {
+        const panelState = loadResearchBtn.querySelector('.panel-state');
+
+        loadResearchBtn.setAttribute('aria-expanded', 'false');
+
         loadResearchBtn.addEventListener("click", () => {
-        projectsContainer.innerHTML = "";
+            const expanded = projectsWrapper.classList.toggle('expanded');
+            projectsWrapper.classList.toggle('collapsed', !expanded);
+            loadResearchBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            panelState.textContent = expanded ? 'Hide' : 'Show';
 
-        projects.forEach(project => {
-            const card = document.createElement("div");
-            card.className = "project-card";
+            if (!expanded) {
+                return;
+            }
 
-            card.innerHTML = `
-                <img src="${project.image}"
-                    alt="${project.title}"
-                    onerror="this.onerror=null; this.src='assets/projects/default.jpg';">
+            if (projectsContainer.childElementCount > 0) {
+                return;
+            }
 
-                <div class="project-content">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
+            projectsContainer.innerHTML = "";
 
-                    ${
-                        project.github
-                            ? `<a href="${project.github}"
-                                class="github-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub repository for ${project.title}">
-                                ${githubIconSVG()}
-                            </a>`
-                            : ""
-                    }
-                </div>
-            `;
+            projects.forEach((project, idx) => {
+                const card = document.createElement("div");
+                card.className = "project-card hidden";
 
-            projectsContainer.appendChild(card);
+                card.innerHTML = `
+                    <img src="${project.image}"
+                        alt="${project.title}"
+                        onerror="this.onerror=null; this.src='assets/projects/default.jpg';">
+
+                    <div class="project-content">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+
+                        ${
+                            project.github
+                                ? `<a href="${project.github}"
+                                    class="github-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub repository for ${project.title}">
+                                    ${githubIconSVG()}
+                                </a>`
+                                : ""
+                        }
+                    </div>
+                `;
+
+                projectsContainer.appendChild(card);
+
+                requestAnimationFrame(() => {
+                    setTimeout(() => card.classList.remove('hidden'), 40 + idx * 80);
+                });
+            });
         });
-    });
-
     }
 
     function githubIconSVG() {

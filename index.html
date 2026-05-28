@@ -29,7 +29,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
     <div class="container">
-        <h2>Machine INtelligence and Data-driven Systems Lab</h2>
+        <h2><span class="hero-emphasis hero-emphasis-m">M</span>achine <span class="hero-emphasis hero-emphasis-in">IN</span>telligence and <span class="hero-emphasis hero-emphasis-d">D</span>ata-driven <span class="hero-emphasis hero-emphasis-s">S</span>ystems Lab</h2>
         <p>Advancing Machine Learning, Multimodal AI, and Data Science</p>
     </div>
 </section>
@@ -51,8 +51,9 @@
     <div class="container">
         <h2>About Us</h2>
         <p>
-            The Machine INtelligence and Data-driven Systems (MINDS) Lab conducts research in Machine Learning, Multimodal AI, and Data Science. 
-            Our work focuses on building robust, scalable, and efficient AI systems that generalize across tasks and domains.
+            The Machine INtelligence and Data-driven Systems (MINDS) Lab at MNSU develops intelligent solutions across natural language understanding, multimodal learning, and clinical AI.
+            Our recent projects include an agentic NL2SQL framework; embedding generation approach for forward-forward algorithms; and a transformer-based system for early lupus detection from multimodal healthcare data.
+            We focus on practical, scalable AI research that delivers better accuracy, system efficiency, and real-world impact.
         </p>
     </div>
 </section>
@@ -77,10 +78,20 @@
         <h2>Selected Projects</h2>
         <p>Representative projects and publications from our lab.</p>
 
-        <button id="loadResearchBtn">Load Recent Projects</button>
+        <div class="research-panel">
+            <button id="loadResearchBtn" class="research-toggle" aria-expanded="false">
+                <div>
+                    <strong>Recent Projects</strong>
+                    <span class="panel-subtitle">Expand to view lab research highlights and repositories.</span>
+                </div>
+                <span class="panel-state">Show</span>
+            </button>
 
-        <div id="projects-container" class="projects-grid">
-            <!-- Projects injected by JS -->
+            <div id="projects-wrapper" class="panel-body collapsed">
+                <div id="projects-container" class="projects-grid">
+                    <!-- Projects injected by JS -->
+                </div>
+            </div>
         </div>
     </div>
 </section>
